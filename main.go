@@ -1,4 +1,4 @@
-package go_web_framework
+package main
 
 import (
 	"github.com/luocaiyi/go-web-framework/framework"
@@ -6,9 +6,11 @@ import (
 )
 
 func main() {
+	core := framework.NewCore()
+	registerRouter(core)
 	server := &http.Server{
-		Handler: framework.NewCore(),
-		Addr: ":8080",
+		Handler: core,
+		Addr:    ":8080",
 	}
 	server.ListenAndServe()
 }
