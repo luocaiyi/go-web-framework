@@ -16,7 +16,7 @@ type Context struct {
 	request        *http.Request
 	responseWriter http.ResponseWriter
 	ctx            context.Context
-	handler        ControllerHandler
+
 	// hasTimeout 是否超时标记位
 	hasTimeout bool
 	// writerMux 写保护机制
